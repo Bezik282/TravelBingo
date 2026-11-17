@@ -1,0 +1,19 @@
+# Nuxt dev/build outputs
+
+# Node dependencies
+
+
+# Logs
+
+
+# Misc
+
+# Local env files
+!.env.example
+node_modules/
+.nuxt/
+.output/
+.data/
+.env
+.env.*
+!.env.example
