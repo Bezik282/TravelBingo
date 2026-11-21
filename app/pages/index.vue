@@ -1,26 +1,18 @@
 
 <script setup lang="ts">
+import LanguageSwitcher from '~/components/layout/LanguageSwitcher.vue'
+import TripCard from '~/components/trips/TripCard.vue'
+import { getAllTrips } from '~/data/trips'
+
 const {
   themes,
   themeId,
   setTheme
 } = useTravelTheme()
 
-
-import { getAllTrips } from '~/data/trips'
+const { t, language } = useLanguage()
 
 const trips = getAllTrips()
-const splitBingo = trips.find(trip => trip.id === 'split')!
-const {
-  completedCount,
-  totalCount,
-  progress
-} = useBingo(splitBingo)
-
-import LanguageSwitcher from '~/components/layout/LanguageSwitcher.vue'
-
-const { t } = useLanguage()
-
 </script>
 
 <template>
@@ -31,23 +23,19 @@ const { t } = useLanguage()
       </div>
 
       <div class="header-actions">
-  <span>❤️ {{ t.forTwo }}</span>
-  <LanguageSwitcher />
-</div>
+        <span>❤️ {{ t.forTwo }}</span>
+        <LanguageSwitcher />
+      </div>
     </header>
 
     <section class="hero">
       <div class="eyebrow">
-        	{{ t.heroLabel }}
+        {{ t.heroLabel }}
       </div>
 
-      <h1>
-        {{ t.heroTitle }}
-      </h1>
+      <h1>{{ t.heroTitle }}</h1>
 
-      <p>
-       {{ t.heroDescription }}
-      </p>
+      <p>{{ t.heroDescription }}</p>
     </section>
 
     <section class="card">
@@ -59,6 +47,7 @@ const { t } = useLanguage()
         <button
           v-for="theme in themes"
           :key="theme.id"
+          type="button"
           class="theme-option"
           :class="{ active: themeId === theme.id }"
           :aria-pressed="themeId === theme.id"
@@ -67,9 +56,7 @@ const { t } = useLanguage()
           <div
             class="theme-preview"
             :style="{
-              background: `linear-gradient(135deg,
-                ${theme.primary},
-                ${theme.secondary})`
+              background: `linear-gradient(135deg, ${theme.primary}, ${theme.secondary})`
             }"
           />
 
@@ -78,35 +65,58 @@ const { t } = useLanguage()
       </div>
     </section>
 
-    <section class="card trip-card">
-      <div class="eyebrow">
-        🇭🇷 Croatia · 3 days
+    <section class="trips-section">
+      <div class="trips-heading">
+        <div>
+          <div class="eyebrow">
+            {{ language === 'pl'
+              ? 'Nasza kolekcja'
+              : 'Our collection' }}
+          </div>
+
+          <h2 class="section-title">
+            {{ language === 'pl'
+              ? 'Nasze podróże'
+              : 'Our trips' }}
+          </h2>
+        </div>
+
+        <span class="trips-count">
+          {{ trips.length }}
+          {{ language === 'pl'
+            ? 'podróży'
+            : trips.length === 1
+              ? 'trip'
+              : 'trips' }}
+        </span>
       </div>
 
-      <h3>Split Adventure</h3>
-
-      <p>
-        25 {{ t.challenges }} · {{ t.natureRomance }}
-      </p>
-
-      <div class="progress-track">
-       <div
-  class="progress-fill"
-  :style="{ width: `${progress}%` }"
-      />
-      </div>
-
-      <p>
-  {{ completedCount }} of
-  {{ totalCount }} challenges completed
-</p>
-
-      <button
-        class="primary-button"
-        @click="navigateTo('/trips/split')"
+      <div
+        v-if="trips.length > 0"
+        class="trips-grid"
       >
-        {{ t.openBingo }} →
-      </button>
+        <TripCard
+          v-for="trip in trips"
+          :key="trip.id"
+          :trip="trip"
+        />
+      </div>
+
+      <div v-else class="card trips-empty">
+        <div class="trips-empty-icon">🧳</div>
+
+        <h3>
+          {{ language === 'pl'
+            ? 'Brak podróży'
+            : 'No trips yet' }}
+        </h3>
+
+        <p>
+          {{ language === 'pl'
+            ? 'Twoje przyszłe przygody pojawią się tutaj.'
+            : 'Your future adventures will appear here.' }}
+        </p>
+      </div>
     </section>
   </main>
 </template>
