@@ -1,5 +1,9 @@
 
 export default defineNuxtConfig({
+
+  runtimeConfig: {
+  osmContactEmail: process.env.OSM_CONTACT_EMAIL || ''
+},
   compatibilityDate: '2025-07-01',
 
   devtools: {

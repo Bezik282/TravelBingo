@@ -81,14 +81,27 @@ const trips = getAllTrips()
           </h2>
         </div>
 
-        <span class="trips-count">
-          {{ trips.length }}
-          {{ language === 'pl'
-            ? 'podróży'
-            : trips.length === 1
-              ? 'trip'
-              : 'trips' }}
-        </span>
+        
+<div class="trips-heading-actions">
+  <span class="trips-count">
+    {{ trips.length }}
+    {{ language === 'pl'
+      ? 'podróży'
+      : trips.length === 1
+        ? 'trip'
+        : 'trips' }}
+  </span>
+
+  <NuxtLink
+    to="/trips/new"
+    class="primary-button trip-open-button"
+  >
+    + {{ language === 'pl'
+      ? 'Nowa przygoda'
+      : 'New adventure' }}
+  </NuxtLink>
+</div>
+
       </div>
 
       <div
