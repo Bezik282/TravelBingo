@@ -22,6 +22,7 @@ const categories = ref([
   'exploration'
 ])
 
+//Categories
 const categoryOptions = [
   { id: 'nature', pl: '🌿 Natura i woda', en: '🌿 Nature & water' },
   { id: 'romance', pl: '❤️ Romantyczne chwile', en: '❤️ Romantic moments' },

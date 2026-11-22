@@ -16,7 +16,7 @@ export type BingoTaskTemplate = {
 }
 
 export const bingoTasks: BingoTaskTemplate[] = [
-  // NATURA
+  // NATURA, Nature
   { id: 'n01', category: 'nature', title: { pl: 'Obejrzyjcie razem zachód słońca', en: 'Watch the sunset together' } },
   { id: 'n02', category: 'nature', title: { pl: 'Znajdźcie miejsce z pięknym widokiem', en: 'Find a place with a beautiful view' } },
   { id: 'n03', category: 'nature', title: { pl: 'Spędźcie 15 minut nad wodą', en: 'Spend 15 minutes by the water' } },
@@ -28,7 +28,7 @@ export const bingoTasks: BingoTaskTemplate[] = [
   { id: 'n09', category: 'nature', title: { pl: 'Zobaczcie wschód słońca', en: 'Watch the sunrise' } },
   { id: 'n10', category: 'nature', title: { pl: 'Odkryjcie nową ścieżkę spacerową', en: 'Discover a new walking path' } },
 
-  // ROMANTYCZNE
+  // ROMANTYCZNE, Romance
   { id: 'r01', category: 'romance', title: { pl: 'Zróbcie wspólne selfie', en: 'Take a selfie together' } },
   { id: 'r02', category: 'romance', title: { pl: 'Zorganizujcie spontaniczną randkę', en: 'Go on a spontaneous date' } },
   { id: 'r03', category: 'romance', title: { pl: 'Powiedzcie sobie po trzy komplementy', en: 'Give each other three compliments' } },
@@ -40,7 +40,7 @@ export const bingoTasks: BingoTaskTemplate[] = [
   { id: 'r09', category: 'romance', title: { pl: 'Wspólnie zaplanujcie kolejną podróż', en: 'Plan your next trip together' } },
   { id: 'r10', category: 'romance', title: { pl: 'Opowiedzcie sobie ulubione wspomnienie', en: 'Share your favourite memory together' } },
 
-  // JEDZENIE
+  // JEDZENIE, Food
   { id: 'f01', category: 'food', title: { pl: 'Spróbujcie lokalnego przysmaku', en: 'Try a local speciality' } },
   { id: 'f02', category: 'food', title: { pl: 'Zjedzcie razem deser', en: 'Share a dessert' } },
   { id: 'f03', category: 'food', title: { pl: 'Odwiedźcie lokalną piekarnię', en: 'Visit a local bakery' } },
@@ -52,7 +52,7 @@ export const bingoTasks: BingoTaskTemplate[] = [
   { id: 'f09', category: 'food', title: { pl: 'Zjedzcie posiłek z ładnym widokiem', en: 'Have a meal with a nice view' } },
   { id: 'f10', category: 'food', title: { pl: 'Oceńcie wspólnie nową potrawę', en: 'Rate a new dish together' } },
 
-  // ODKRYWANIE
+  // ODKRYWANIE, Exploration
   { id: 'e01', category: 'exploration', title: { pl: 'Odkryjcie ciekawą boczną uliczkę', en: 'Discover an interesting side street' } },
   { id: 'e02', category: 'exploration', title: { pl: 'Znajdźcie zabytkowy budynek', en: 'Find a historic building' } },
   { id: 'e03', category: 'exploration', title: { pl: 'Odwiedźcie lokalny plac', en: 'Visit a local square' } },
@@ -64,7 +64,7 @@ export const bingoTasks: BingoTaskTemplate[] = [
   { id: 'e09', category: 'exploration', title: { pl: 'Znajdźcie najładniejszą ulicę w okolicy', en: 'Find the prettiest street nearby' } },
   { id: 'e10', category: 'exploration', title: { pl: 'Odkryjcie coś ciekawego na lokalnej mapie', en: 'Discover something interesting on a local map' } },
 
-  // ZDJĘCIA
+  // ZDJĘCIA, Photo
   { id: 'p01', category: 'photo', title: { pl: 'Zróbcie zdjęcie z identyczną pozą', en: 'Take a photo in matching poses' } },
   { id: 'p02', category: 'photo', title: { pl: 'Zróbcie zdjęcie waszych cieni', en: 'Take a photo of your shadows' } },
   { id: 'p03', category: 'photo', title: { pl: 'Sfotografujcie coś w ulubionym kolorze', en: 'Photograph something in your favourite colour' } },
